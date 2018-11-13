@@ -1,0 +1,6 @@
+<h1>Users</h1>
+
+<% @users.each do |user| %>
+  <li>Hey I am <%= user.name %> and you can see my password hash!</li>
+  <li><%= user.password_digest %></li>
+<% end %>
