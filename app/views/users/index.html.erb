@@ -1,6 +1,12 @@
 <h1>Users</h1>
 
-<% @users.each do |user| %>
-  <li>Hey I am <%= user.name %> and you can see my password hash!</li>
-  <li><%= user.password_digest %></li>
+<% if logged_in? %>
+  <h1>Only logged in Users can see password hashes.</h1>
+  <%= link_to "Log out", logout_path, method: :delete %>
+  <% @users.each do |user| %>
+    <li>Hey I am <%= user.name %> and you can see my password hash!</li>
+    <li><%= user.password_digest %></li>
+  <% end %>
+<% else %>
+  <h1>You should log in to see the password hashes!</h1>
 <% end %>
