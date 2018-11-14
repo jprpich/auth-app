@@ -1,7 +1,5 @@
-<h1>Users</h1>
-
 <% if logged_in? %>
-  <h1>Only logged in Users can see password hashes.</h1>
+  <h1>Congratulations you are logged in! Logged in users can see password hashes. And see our secret team, home and about page!</h1>
   <%= link_to "Log out", logout_path, method: :delete %>
   <% @users.each do |user| %>
     <li>Hey I am <%= user.name %> and you can see my password hash!</li>
